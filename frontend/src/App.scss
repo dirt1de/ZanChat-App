@@ -1,0 +1,59 @@
+.App {
+  height: 100vh;
+  width: 100%;
+  text-align: center;
+  background-color: white;
+
+  .logo {
+    padding: 2% 6%;
+    font-size: 36px;
+    display: flex;
+    justify-content: center;
+
+    .logoWrapper {
+        display: flex;
+        flex-direction: row;
+      }
+      
+      .zan {
+        color: rgb(71, 184, 5);
+        font-family: sans-serif;
+      }
+
+      .chat {
+        color: black;
+        margin-right: "5px" 
+      }
+  }
+}
+
+
+
+.video-wrapper {
+  width: 100vw;
+  height: 80vh;
+}
+
+#videos{
+  /* min-width: 960px; */
+  margin: 0 10px;
+  height: 100%;
+  width: 100%;
+  display:flex;
+  flex-direction: row;
+  align-items: center;
+  justify-content: center;
+}
+
+.video-player-hidden{
+  display: none;
+}
+
+video{
+  margin: 10px;
+  width:70%;
+  height: 60%;
+  /* border:2px solid white; */
+  /* background-color: rgb(63,62,62); */
+}
+

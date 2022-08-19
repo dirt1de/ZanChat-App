@@ -1,0 +1,83 @@
+syntax = "proto3";
+package textchat;
+
+ import "google/protobuf/empty.proto";
+
+service TextChat {
+    rpc SignUp (InitiateChatRequest) returns (InitiateChatResponse);
+    rpc LogIn (InitiateChatRequest) returns (InitiateChatResponse);
+    rpc CreateRoom (CreateRoomRequest) returns (CreateRoomResponse);    // needs to add the caller to room
+    rpc JoinRoom (JoinRoomRequest) returns (google.protobuf.Empty);
+    rpc ListUserRooms (ListUserRoomsRequest) returns (ListUserRoomsResponse);
+    rpc SendMessageToRoom (MessageRequest) returns (google.protobuf.Empty);
+    rpc GetUsersInRoom (StreamRequest) returns (stream UsersResponse);
+    rpc GetMessagesInRoom (StreamRequest) returns (stream MessageResponse);
+}
+
+message InitiateChatRequest {
+    // Name should be globally unique
+    string name = 1;
+}
+
+message InitiateChatResponse {
+    string userId = 1;
+}
+
+// message LogInRequest {
+//     string userId = 1;
+// }
+
+message CreateRoomRequest {
+    User user = 1;
+    string roomName = 2;
+}
+
+message CreateRoomResponse {
+    string roomId = 1;
+}
+
+message JoinRoomRequest {
+    User user = 1;
+    string roomId = 2;
+}
+
+message RoomInfo {
+    string roomName = 1;
+    string roomId = 2;
+}
+
+message ListUserRoomsRequest {
+    string userId = 1;
+}
+
+message ListUserRoomsResponse {
+    repeated RoomInfo rooms = 1;
+}
+
+message MessageRequest {
+    string userId = 1;
+    string message = 2;
+    string roomId = 3;
+}
+
+message User {
+    string userId = 1;
+    string name = 2;
+}
+
+message StreamRequest {
+    string userId = 1;
+    string roomId = 2;
+}
+
+message UsersResponse {
+    // RoomInfo roomInfo = 1;
+    User user = 1;
+}
+
+message MessageResponse {
+    // RoomInfo roomInfo = 1;
+    string userId = 1;
+    string sender_name = 2;
+    string message = 3;
+}

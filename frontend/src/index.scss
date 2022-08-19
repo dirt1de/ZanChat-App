@@ -1,0 +1,104 @@
+body {
+  margin: 0;
+  font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', 'Roboto', 'Oxygen',
+    'Ubuntu', 'Cantarell', 'Fira Sans', 'Droid Sans', 'Helvetica Neue',
+    sans-serif;
+  -webkit-font-smoothing: antialiased;
+  -moz-osx-font-smoothing: grayscale;
+
+  .ant-btn {
+    font-weight: 500;
+    &:active {
+      color: rgb(82, 220, 2) !important;
+      border-color: rgb(82, 220, 2) !important;
+    }
+    &:hover {
+      color: rgb(82, 220, 2) !important;
+      border-color: rgb(82, 220, 2) !important;
+    }
+    &:focus {
+      color: rgb(51, 139, 0) !important;
+      border-color: rgb(82, 220, 2) !important;
+    }
+  }
+
+  .ant-btn-primary {
+    font-weight: 500;
+    background-color: rgb(82, 220, 2) !important;
+
+    &:active {
+      color: white !important;
+      background-color: rgb(82, 220, 2) !important;
+    }
+    &:hover {
+      color: white !important;
+      background-color: rgb(88, 240, 0) !important;
+    }
+    &:focus {
+      color: white !important;
+      background-color: rgb(82, 220, 2) !important;
+    }
+  }
+
+  .ant-menu {
+    font-size: 20px;
+    &:focus-visible {
+      border: none;
+    }
+  }
+
+  .ant-menu-submenu-title {
+    &:hover {
+      color: rgb(82, 220, 2) !important;
+    }
+    &:active {
+      background-color: white !important;
+    }
+  }
+
+  .ant-menu-submenu {
+    color: rgb(127, 127, 127);
+    &:hover {
+      .ant-menu-submenu-arrow {
+        color: rgb(82, 220, 2) !important;
+      }
+    }
+  }
+
+
+  .ant-menu-item {
+    font-size: 18px;
+    padding-left: 24px !important;
+    color: rgb(127, 127, 127);
+
+
+    &:hover {
+      color: rgb(82, 220, 2) !important;
+    }
+    &:active {
+      background-color: white !important;
+    }
+
+    &::after {
+      border-right: 3px solid rgb(82, 220, 2) !important;;
+    }
+
+    &::before{
+      border: none;
+    }
+  }
+
+  .ant-menu-item-selected {
+    color: rgb(71, 184, 5);
+    background-color: rgba($color: rgb(82, 220, 2), $alpha: 0.15) !important;
+  }
+
+  .ant-menu-sub {
+    background-color: white !important;
+  }  
+}
+
+code {
+  font-family: source-code-pro, Menlo, Monaco, Consolas, 'Courier New',
+    monospace;
+}
